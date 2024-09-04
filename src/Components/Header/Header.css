@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 18px;
+    background-color: #080808;
+    padding: 20px;
+    color: rgb(248, 38, 63);
+    font-weight: bold;
+    top: 0;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navigation a {
+    text-decoration: none;
+    margin-right: 30px;
+    font-size: 18px;
+    color: wheat;
+    font-weight: bold;
+}
