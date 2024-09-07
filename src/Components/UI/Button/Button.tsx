@@ -10,7 +10,7 @@ const Button: React.FC<InputProps> = (props) => {
   return (
     <button
       type={type}
-      className={`w-full text-white py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-red-100 ${className}`}
+      className={`text-white py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-red-100 ${className}`}
       {...restProps}
     >
       {title}

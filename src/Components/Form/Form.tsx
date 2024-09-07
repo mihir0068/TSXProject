@@ -10,7 +10,11 @@ import usePasswordValidation from "../../app/hooks/Validation/Password/usePasswo
 
 const Form: React.FC = () => {
   const navigate = useNavigate();
-  const { email, error: emailError, handleChange: handleEmailChange } = useEmailValidation();
+  const {
+    email,
+    error: emailError,
+    handleChange: handleEmailChange,
+  } = useEmailValidation();
   const {
     password,
     error: passwordError,
@@ -18,6 +22,7 @@ const Form: React.FC = () => {
     handleBlur,
     validatePassword,
   } = usePasswordValidation();
+
   const [isButtonEnabled, setIsButtonEnabled] = useState<boolean>(false);
 
   useEffect(() => {
@@ -47,19 +52,23 @@ const Form: React.FC = () => {
           <Input
             type="text"
             placeholder="Username or Email"
-            iconClass="bi-person-fill"
+            iconClass="bi-person-fill text-[#9E9E9E]"
             onChange={handleEmailChange}
+            className="w-[365px] h-[46px] placeholder-[#7E8084] placeholder:text-[14px] rounded-[8px]"
           />
           {emailError && (
-            <span className="text-red-500 text-sm mt-1 ml-2">{emailError}</span>
+            <span className="text-red-500 text-[13px] font-normal mt-1 ml-2">
+              {emailError}
+            </span>
           )}
           <div className="mt-4">
             <Input
               type="password"
               placeholder="Password"
-              iconClass="bi-lock-fill"
+              iconClass="bi-lock-fill text-[#9E9E9E]"
               onChange={handlePasswordChange}
               onBlur={handleBlur}
+              className="w-[365px] h-[46px] placeholder-[#7E8084] placeholder:text-[14px] rounded-[8px]"
             />
             {passwordError && (
               <p className="text-red-500 text-sm mt-1 ml-2">{passwordError}</p>
@@ -74,20 +83,21 @@ const Form: React.FC = () => {
             type="checkbox"
             name="remember-me"
             id="remember-me"
-            className="focus:text-red-700"
+            className="w-[15px] h-[15px] accent-pageRed"
             label={""}
+            checked={true}
           />
         </div>
         <div>
-          <Label title="Remember Me" className="pl-2 pt-4" />
+          <Label title="Remember Me" for="remember-me" className="pl-2 pt-4" />
         </div>
       </div>
 
       <Button
         title="Sign In"
-        className={`mt-7 ${
+        className={`w-full h-[46px] text-[16px] font-semibold mb-[17px] mt-7 ${
           isButtonEnabled
-            ? "bg-red-600"
+            ? "bg-pageRed"
             : "disabled:bg-[#939393] cursor-no-drop"
         } text-white`}
         type="submit"

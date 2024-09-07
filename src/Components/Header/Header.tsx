@@ -6,33 +6,35 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
+
   const handleLogout = (e: React.MouseEvent) => {
     e.preventDefault();
     navigate("/Login");
   };
+
   return (
     <>
-      <div className="flex flex-col font-arialCyrillic bg-white p-1">
-        <div className="flex justify-between items-center">
-          <div className="flex flex-row items-center">
-            <div>
-              <img src={logo} alt="" height={70} width={70} />
-            </div>
-            <div>
-              <p className="font-bold text-xl text-red-600 text-center">
-                Wellbe<span className="text-[#4e4e59]">Sync</span>
-              </p>
-            </div>
+      <div className="flex flex-row justify-between items-center h-[70px] bg-pageBG">
+        <div className="w-[246px] h-[70px] flex items-center justify-center border-r-[0.5px] border-b-[0.5px]  border-gray-400 border-dashed">
+          <img src={logo} alt="" height={33} width={33} />{" "}
+          <p className="text-pageRed font-bold text-[18.34px] pl-1">
+            Wellbe<span className="text-gray-600">Sync</span>
+          </p>
+        </div>
+
+        <div className="flex justify-center items-center space-x-4 pr-4">
+          <div className="relative inline-block mr-[10px] ">
+            <i className="bi bi-bell-fill text-pageDarkGray w-[25px] h-[25px] cursor-pointer"></i>
+            <sup className="absolute top-[-7px] right-[-6px] bg-pageRed text-white rounded text-xs px-[0.6px] py-[0.4px]">
+              10
+            </sup>
           </div>
-          <div className="flex flex-row justify-between">
-            <div className="mr-4 cursor-pointer">
-              <i className="bi bi-bell-fill text-[#4e4e59]"></i>
-            </div>
-            <div className="pr-2 cursor-pointer" onClick={handleLogout}>
-              {" "}
-              <i className="bi bi-box-arrow-left text-red-500 font-bold"></i>{" "}
-              Logout
-            </div>
+
+          <div
+            className="bg-pageDarkGray text-white text-[24px] w-[35px] h-[35px] flex justify-center items-center rounded-[20px] cursor-pointer"
+            onClick={handleLogout}
+          >
+            D
           </div>
         </div>
       </div>

@@ -10,9 +10,9 @@ const useEmailValidation = () => {
 
   const validateEmail = () => {
     if (!email) {
-      setError("Email is required");
+      setError("Email is required !!");
     } else if (!/\S+@\S+\.\S+/.test(email)) {
-      setError("Email is invalid");
+      setError("Invalid Username or Email, Please try again!");
       // return false;
     } else {
       setError("");
